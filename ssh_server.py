@@ -5,7 +5,7 @@ import sys
 import threading
 
 CWD = os.path.dirname(os.path.realpath(__file__))
-HOSTKEY = paramiko.RSAKey(filename=os.path.join(CWD, '/home/joh/bhp/paramiko/demos/test_rsa.key'))
+HOSTKEY = paramiko.RSAKey(filename=os.path.join(CWD, 'test_rsa.key'))
 
 class Server(paramiko.ServerInterface):
 	def __init__(self):
@@ -21,8 +21,8 @@ class Server(paramiko.ServerInterface):
 			return paramiko.AUTH_SUCCESSFUL
 
 if __name__ == '__main__':
-	server = '10.0.2.15'
-	ssh_port = 2222
+	server = '192.169.11.11'
+	ssh_port = 21
 	try:
 		sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 		sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -35,7 +35,6 @@ if __name__ == '__main__':
 		sys.exit(1)
 	else:
 		print(f'[+] Got a connection! from {addr}')
-	
 	bhSession = paramiko.Transport(client)
 	bhSession.add_server_key(HOSTKEY)
 	server = Server()

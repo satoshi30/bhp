@@ -11,6 +11,7 @@ class IP(Structure):
 		("tos", c_ubyte, 8),			# 1 byte unsigned char
 		("len", c_ushort, 16),			# 2 byte unsigned short
 		("id", c_ushort, 16),			# 2 byte unsigned short
+		("offset", c_ushort, 16),			# 2 byte unsigned short
 		("ttl", c_ubyte, 8),			# 1 byte unsigned char
 		("protocol_num", c_ubyte, 8),	# 1 byte unsigned char
 		("sum", c_ushort, 16),			# 2 byte unsigned short
@@ -35,7 +36,6 @@ class IP(Structure):
 			print('%s No protocol for %s' % (e, self.protocol_num))
 			self.protocol = str(self.protocol_num)
 
-	
 def sniff(host):
 	if os.name == 'nt':
 		socket_protocol = socket.IPPROTO_IP

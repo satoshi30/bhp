@@ -1,3 +1,9 @@
 [submodule "paramiko"]
 	path = paramiko
 	url = https://github.com/paramiko/paramiko.git
+[submodule "black-hat-python-2e-ja"]
+	path = black-hat-python-2e-ja
+	url = https://github.com/oreilly-japan/black-hat-python-2e-ja.git
+[submodule "05_web/dvwp"]
+	path = 05_web/dvwp
+	url = https://github.com/vavkamil/dvwp.git

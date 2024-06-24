@@ -24,7 +24,7 @@ class IP:
 		self.dst_address = ipaddress.ip_address(self.dst)
 
 		# プロトコルの定義値を名称にマッピング
-		self.protocol_map = {1: "ICMP", 2: "TCP", 3: "UDP"}
+		self.protocol_map = {1: "ICMP", 6: "TCP", 17: "UDP"}
 		try:
 			self.protocol = self.protocol_map[self.protocol_num]
 		except Exception as e:
